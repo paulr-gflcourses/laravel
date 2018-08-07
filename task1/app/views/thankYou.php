@@ -1,12 +1,10 @@
 <html>
 <head></head>
 <body>
-  <h1>My test form</h1>  
-    <ul>
-        <li><a href="/articles">/articles</a></li>
-        <li><a href="/about">/about</a></li>
-        <li><a href="/contact-us">/contact-us</a></li>
-    </ul>
+  <h1>Thank you!</h1>  
+    <div>
+    Thank You, <?php echo $name; ?>!
+    </div>
 </body>
 
 </html>

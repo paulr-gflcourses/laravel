@@ -12,7 +12,11 @@ class Task1Controller extends BaseController
         return View::make('articles');
     }
 
-    
+    public function article($n)
+    {
+        return View::make('article')->with('n',$n);
+    }
+
     public function about()
     {
         return View::make('about');
@@ -25,26 +29,47 @@ class Task1Controller extends BaseController
 
     public function contactUsPost()
     {
+        $name = Input::get('name');
+        $message = Input::get('message');
+        $errors = '';
+        if (!$name)
+        {
+            $errors.='Field name is empty! ';
+        }
 
+        if (!$message)
+        {
+            $errors.='Field message is empty!';
+        }
+
+        if ($errors)
+        {
+            return View::make('contactUs')->with('errors', $errors);
+        }else
+        {
+            return Redirect::to("/thank-you")->with("name", $name);
+        }
     }
+
     public function thankYou()
     {
-        return View::make('thankYou');
+        $name = Session::get('name');
+        return View::make('thankYou')->with('name',$name);
     }
     //public function showHello()
     //{
-       //return "Test !!!!"; 
+    //return "Test !!!!"; 
     //}
 
     //public function getForm()
     //{
-        //return View::make('form');
+    //return View::make('form');
     //}
 
     //public function postForm()
     //{
-        //$name = Input::get('name');
-        //return "$name OK";
+    //$name = Input::get('name');
+    //return "$name OK";
     //}
 }
 

@@ -4,10 +4,10 @@
     </IfModule>
 
     RewriteEngine On
-    #RewriteBase /~user12/task1	
+    RewriteBase /~user12/task1	
     #RewriteBase /~paul/task1	
     # Redirect Trailing Slashes...
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    #RewriteRule ^(.*)/$ /$1 [L,R=301]
 
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d

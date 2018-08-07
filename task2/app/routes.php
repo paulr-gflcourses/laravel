@@ -48,6 +48,8 @@ Route::get('/db', function ()
     //var_dump($album);
     var_dump($album->artist->Name);
 
+    $track = Track::find(1);
+    var_dump($track->genre->Name);
 
     //var_dump($res);
 });
