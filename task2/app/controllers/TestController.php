@@ -2,10 +2,19 @@
 
 class TestController extends BaseController
 {
-    public function showHello()
+    public function artists()
     {
-       return "Test !!!!"; 
+        $artists = Artist::all();
+        return View::make('artists')->with('artists',$artists);
     }
+    
+    public function artist($id)
+    {
+        $artist = Artist::get($id);
+        return View::make('album')->with('album',$artists);
+        
+    }
+
 
     public function getForm()
     {
