@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ModifyUsersAddNickname extends Migration {
+class CreateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,13 @@ class ModifyUsersAddNickname extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::create('users', function(Blueprint $table)
 		{
-		    $table->string('nickname', 50);
+			$table->increments('id');
+			$table->string('email', 64);
+			$table->char('password', 60);
+			$table->rememberToken();
+			$table->timestamps();
 		});
 	}
 
@@ -25,10 +29,7 @@ class ModifyUsersAddNickname extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
-		{
-			$table->dropColumn('nickname');
-		});
+		Schema::drop('users');
 	}
 
 }

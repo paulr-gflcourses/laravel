@@ -1,0 +1,26 @@
+<?php $__env->startSection('content'); ?>
+<a href="<?php echo URL::action('ForumController@getTopicsList'); ?>">Back to list</a>
+<h1><?php echo $topic->title; ?></h1>
+<?php foreach($posts as $post): ?>
+<div class="post">
+	<div class="post-head">
+		<p>
+			<span class="author"><?php echo $post->user->nickname; ?></span>
+			<span class="ts"><?php echo $post->created_at; ?></span>
+		</p>
+	</div>
+	<div class="post-body">
+		<p><?php echo $post->message; ?></p>
+	</div>
+</div>
+<?php endforeach; ?>
+<?php echo $posts->links(); ?>
+
+<h2>New Post</h2>
+<form method="POST" action="<?php echo URL::action('ForumController@postNewPost', $topic->id); ?>">
+<textarea name="message"></textarea>
+<button type="submit">Send</button>
+</form>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

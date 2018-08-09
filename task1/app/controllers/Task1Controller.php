@@ -56,21 +56,6 @@ class Task1Controller extends BaseController
         $name = Session::get('name');
         return View::make('thankYou')->with('name',$name);
     }
-    //public function showHello()
-    //{
-    //return "Test !!!!"; 
-    //}
-
-    //public function getForm()
-    //{
-    //return View::make('form');
-    //}
-
-    //public function postForm()
-    //{
-    //$name = Input::get('name');
-    //return "$name OK";
-    //}
 }
 
 ?>

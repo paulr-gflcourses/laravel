@@ -23,27 +23,8 @@ Route::get('/article/{n}', 'Task1Controller@article')->where('n','[0-9]+');
 Route::get('/about', 'Task1Controller@about');
 Route::get('/contact-us', 'Task1Controller@contactUs');
 Route::post('/contact-us', 'Task1Controller@contactUsPost');
-//Route::get('/about', 'Task1Controller@about');
-//Route::get('/contact-us', 'Task1Controller@contactUs');
-//Route::post('/contact-us', 'Task1Controller@contactUsPost');
 Route::get('/thank-you', 'Task1Controller@thankYou');
 
-//Route::get('/hello/{name?}', function ($name='user')
-//{
-    //return "Hello, $name";
-//})->where('name','[a-zA-Z]+');
-//Route::get('/hello/{name?}', function($name="user"){
-    //return "Hello again, $name";
-//});
-
-
-//Route::get('/redirect', function(){
-    //return Redirect::to('http://google.com');
-//});
-
-//Route::get('/test1', 'TestController@showHello');
-//Route::get('/post-form', array('as'=>'form', 'uses'=>'TestController@getForm'));
-//Route::post('/test/form', array('as'=>'pform', 'uses'=>'TestController@postForm'));
 
 Route::get('/test', 'HomeController@showTest');
 
