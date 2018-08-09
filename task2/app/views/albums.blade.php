@@ -7,10 +7,11 @@
 
 </head>
 <body>
-    <h1>Albums of the Artist {{$artist->Name}}({{$artist->ArtistId}})</h1>
+    <h1>Albums of the Artist {{$artist->Name}}</h1>
     <ul>
         @foreach ($albums as $album)
-            <li><a href="album/{{$album->AlbumId}}">{{$album->Title}} ({{$album->AlbumId}})</a></li>
+            <li><a href="{{URL::route('album', array('id'=>$album->AlbumId))}}">
+{{$album->Title}} </a></li>
         @endforeach
     </ul>
 

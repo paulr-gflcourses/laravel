@@ -12,6 +12,10 @@ class Album extends Eloquent  {
        return $this->belongsTo('Artist', 'ArtistId', 'ArtistId');
     }
 
+    public function tracks()
+    {
+        return $this->hasMany('Track', 'AlbumId', 'AlbumId');
+    }
         
 
 }

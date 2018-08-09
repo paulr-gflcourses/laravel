@@ -17,7 +17,9 @@ Route::get('/', function()
 });
 
 Route::get('/', 'TestController@artists');
-Route::get('/artist/{id}', 'TestController@artist');
+Route::get('/artist/{id}', ['as'=>'artist','uses'=>'TestController@albums']);
+Route::get('/album/{id}', ['as'=>'album','uses'=>'TestController@tracks']);
+Route::get('/track/{id}', ['as'=>'track', 'uses'=>'TestController@trackInfo']);
 
 //Route::get('/hello/{name?}', function ($name='user')
 //{
