@@ -4,8 +4,7 @@
     </IfModule>
 
     RewriteEngine On
-    #RewriteBase /~user12/megaapp
-    RewriteBase /~paul/megaapp
+    RewriteBase /~user12/megaapp
     # Redirect Trailing Slashes...
     RewriteRule ^(.*)/$ /$1 [L,R=301]
 
