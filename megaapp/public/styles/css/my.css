@@ -1,0 +1,20 @@
+body{
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.header a{
+    color: #f82;
+}
+.header{
+    background: rgb(45, 43, 75);
+    color: #c81;
+    padding: 10px;
+}
+.content{
+    background: rgb(230, 255, 255);
+    padding: 10px;
+}
+
+/*.post{*/
+    /*background: rgb(100, 215, 225);*/
+    /*padding: 5px;*/
+/*}*/

@@ -17,9 +17,10 @@
 </div>
 @endforeach
 {{$posts->links()}}
+
 <h2>New Post</h2>
 <form method="POST" action="{{URL::action('ForumController@postNewPost', $topic->id)}}">
-<textarea name="message"></textarea>
-<button type="submit">Send</button>
+    <textarea name="message"></textarea>
+    <button type="submit">Send</button>
 </form>
 @stop

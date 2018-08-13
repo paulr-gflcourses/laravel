@@ -1,20 +1,43 @@
 <html>
 <head>
+    <style type="text/css">
+
+
+    </style>
+
+    <title>Forum list</title>
+    <link rel="stylesheet" href="<?php echo URL::asset('styles/css/bootstrap.min.css'); ?>" />
+    <link rel="stylesheet" href="<?php echo URL::asset('styles/css/my.css'); ?>" />
 </head>
 <body>
-<div class="header">
-<?php if(Auth::check()): ?>
-Hello, <?php echo Auth::user()->nickname; ?>
 
-<a href="<?php echo URL::action('AuthController@getLogout'); ?>">Log Out</a>
-<?php else: ?>
-<a href="<?php echo URL::action('AuthController@getLoginForm'); ?>">Log In</a>
-<a href="<?php echo URL::action('AuthController@getRegisterForm'); ?>">Register</a>
-<?php endif; ?>
+<div class="container-fluid">
+    <div class="header">
+        <ul class='nav'>
+            <?php if(Auth::check()): ?>
+                <li class='nav-item'>
+                    Hello, <?php echo Auth::user()->nickname; ?>
+
+                </li>
+                <li class='nav-item'>
+                <a id="logout" class="nav-link" href="<?php echo URL::action('AuthController@getLogout'); ?>">Log Out</a>
+                </li>
+            <?php else: ?>
+                <li class='nav-item'>
+                    <a id="login" class="nav-link" href="<?php echo URL::action('AuthController@getLoginForm'); ?>">Log In</a>
+                </li>
+                <li class='nav-item'>
+                    <a id="register" class="nav-link" href="<?php echo URL::action('AuthController@getRegisterForm'); ?>">Register</a>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+
+    <div class="content">
+        <?php echo $__env->yieldContent('content'); ?>
+    </div>
 </div>
-<div class="content">
-<?php echo $__env->yieldContent('content'); ?>
-</div>
+
 </body>
 </html>
 
