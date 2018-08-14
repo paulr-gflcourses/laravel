@@ -1,20 +1,36 @@
 body{
     font: 13px Arial, Helvetica, sans-serif;
+    background: rgb(239, 199, 126);
 }
 .header a{
-    color: #f82;
+    color: rgb(255, 198, 149);
+    font-weight: bold;
 }
 .header{
     background: rgb(45, 43, 75);
-    color: #c81;
+    color: rgb(243, 235, 222);
     padding: 10px;
 }
 .content{
-    background: rgb(230, 255, 255);
     padding: 10px;
+    padding-right:30px;
+    padding-left: 30px
 }
-
-/*.post{*/
-    /*background: rgb(100, 215, 225);*/
-    /*padding: 5px;*/
-/*}*/
+.topicstarter{
+    text-align: right;
+}
+.topic-title{
+    font-size: 1.4em;
+}
+.post-head{
+    text-align: right;
+}
+.post-head .author{ 
+    font-weight: bold;
+}
+.post-head .ts{ 
+    font-style: italic;
+}
+.post .post-body{
+    font-size: 1.4em;
+}

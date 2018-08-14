@@ -12,14 +12,14 @@
 <body>
 
 <div class="container-fluid">
-    <div class="header">
-        <ul class='nav'>
+    <div class="header row">
+        <ul class='col-lg-2 menu nav nav-pills'>
             @if(Auth::check())
-                <li class='nav-item'>
+                <div class="user">
                     Hello, {{Auth::user()->nickname}}
-                </li>
-                <li class='nav-item'>
-                <a id="logout" class="nav-link" href="{{URL::action('AuthController@getLogout')}}">Log Out</a>
+                </div>
+                <li role="presentation">
+                <a id="logout"  href="{{URL::action('AuthController@getLogout')}}">Log Out</a>
                 </li>
             @else
                 <li class='nav-item'>
@@ -30,9 +30,10 @@
                 </li>
             @endif
         </ul>
+        <h1 class="col-lg-6 col-lg-offset-2">MegaApp Forum</h1>
     </div>
 
-    <div class="content">
+    <div class="content row">
         @yield('content')
     </div>
 </div>

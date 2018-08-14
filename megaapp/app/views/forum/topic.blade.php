@@ -1,10 +1,12 @@
 @extends('layout.main')
 
 @section('content')
-<a href="{{URL::action('ForumController@getTopicsList')}}">Back to list</a>
+<a class="btn btn-primary" href="{{URL::action('ForumController@getTopicsList')}}">Back to list</a>
+<div class="row">
+<div class="col-lg-5">
 <h1>{{$topic->title}}</h1>
 @foreach($posts as $post)
-<div class="post">
+<div class="post alert alert-success">
 	<div class="post-head">
 		<p>
 			<span class="author">{{$post->user->nickname}}</span>
@@ -18,9 +20,15 @@
 @endforeach
 {{$posts->links()}}
 
+</div>
+<div class="col-lg-5">
 <h2>New Post</h2>
-<form method="POST" action="{{URL::action('ForumController@postNewPost', $topic->id)}}">
-    <textarea name="message"></textarea>
-    <button type="submit">Send</button>
-</form>
+        <form method="POST" action="{{URL::action('ForumController@postNewPost', $topic->id)}}">
+            <div class="form-group">
+                <textarea class="form-control" name="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+    </div>
+</div>
 @stop
