@@ -27,6 +27,9 @@
             <div class="form-group">
                 <textarea class="form-control" name="message"></textarea>
             </div>
+            <div class="error">
+            {{$errors->first('message') }}
+            </div>
             <button type="submit" class="btn btn-primary">Send</button>
         </form>
     </div>

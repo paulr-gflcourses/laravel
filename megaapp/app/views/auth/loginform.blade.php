@@ -1,16 +1,26 @@
 @extends('layout.main')
 @section('content')
 @if(isset($error))
-<p>{{$error}}</p>
+<p class="error">{{$error}}</p>
 @endif
-    <form method="POST" action="">
-        <div class="form-group">
-            <label for="email">E-mail</label>
-            <input type="text" id="email" name="email">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+<div class="row">
+    <div class="col-lg-3">
+        <form method="POST" action="">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" id="email" name="email">
+        <div class="error form-text text-muted">
+            {{$errors->first('email') }}
         </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+        <div class="error form-text text-muted">
+            {{$errors->first('password') }}
         </div>
-    </form>
+            </div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </div>
+        </form>
+    </div>
+</div>
 @stop

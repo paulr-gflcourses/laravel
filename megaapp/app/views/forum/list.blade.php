@@ -23,7 +23,9 @@
 <form method="POST" action="{{URL::action('ForumController@postNewTopic')}}">
  <div class="form-group">
 <input type="text" class="form-control" name="title">
+<div class="error">
 {{$errors->first('title') }}
+</div>
 </div>
 <button type="submit" class="btn btn-primary">Start</button>
 </form>

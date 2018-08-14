@@ -10,7 +10,7 @@
 <div class="form-group">
     <label for="nickname">Nickname</label>
     <input type="text" class="form-control" id="nickname" name="nickname">
-    <div class="form-text text-muted">
+    <div class="error form-text text-muted">
         {{$errors->first('nickname') }}
     </div>
 </div>
@@ -18,7 +18,8 @@
 <div class="form-group">
     <label for="email" >E-mail</label>
     <input type="text" class="form-control" id="email" name="email">
-    <div class="form-text text-muted">
+    <!--div class="form-text text-muted"-->
+    <div class="error form-text text-muted">
         {{$errors->first('email') }}
     </div>
 </div>
@@ -26,7 +27,7 @@
 <div class="form-group">
     <label for="password">Password</label>
     <input type="password" class="form-control" id="password" name="password">
-    <div class="form-text text-muted">
+    <div class="error form-text text-muted">
         {{$errors->first('password') }}
     </div>
 </div>
