@@ -1,7 +1,10 @@
 @extends('layout.main')
 @section('content')
 @if(isset($error))
-<p class="error">{{$error}}</p>
+<p class="error">Error: {{$error}}</p>
+@endif
+@if(isset($status))
+<p class="error">Success: {{$status}}</p>
 @endif
 <div class="row">
     <div class="col-lg-3">

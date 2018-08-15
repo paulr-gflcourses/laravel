@@ -1,6 +1,14 @@
 <?php
+use \MegaApp\Repository\UserRepository\UserRepositoryInterface;
 
 class AuthController extends BaseController {
+
+    protected $userRepo;
+    public  function __construct(UserRepositoryInterface $repo)
+    {
+        $this->userRepo = $repo;
+        $this->userRepo->setUser(Auth::user());
+    }
 
     public function getRegisterForm()
     {

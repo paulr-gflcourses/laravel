@@ -1,10 +1,14 @@
 <?php $__env->startSection('content'); ?>
 <?php if(isset($error)): ?>
-<p class="error"><?php echo $error; ?></p>
+<p class="error">Error: <?php echo $error; ?></p>
+<?php endif; ?>
+<?php if(isset($status)): ?>
+<p class="error">Success: <?php echo $status; ?></p>
 <?php endif; ?>
 <div class="row">
     <div class="col-lg-3">
-        <form method="POST" action="">
+        <h2>Send password to email</h2>
+        <form method="POST" action="<?php echo action('RemindersController@postRemind'); ?>">
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="text" class="form-control" id="email" name="email">
@@ -12,16 +16,9 @@
                     <?php echo $errors->first('email'); ?>
 
                 </div>
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-                <div class="error form-text text-muted">
-                    <?php echo $errors->first('password'); ?>
-
-                </div>
-                <a id="forgot"  href="<?php echo URL::action('RemindersController@getRemind'); ?>">Forgot password?</a>
-
             </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <button type="submit" class="btn btn-primary">Send password</button>
+    </div>
         </form>
 </div>
 </div>
