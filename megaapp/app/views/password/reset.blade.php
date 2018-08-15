@@ -5,7 +5,8 @@
 @endif
 <div class="row">
     <div class="col-lg-3">
-        <form method="POST" action="">
+        <form method="POST" action="{{ action('RemindersController@postReset')  }}">
+            <input type="hidden" name="token" value="{{ $token  }}">
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="text" class="form-control" id="email" name="email">
@@ -17,11 +18,11 @@
                 <div class="error form-text text-muted">
                     {{$errors->first('password') }}
                 </div>
-                <a id="forgot"  href="{{URL::action('RemindersController@getRemind')}}">Forgot password?</a>
+                <input type="password" class="form-control" name="password_confirmation">
 
             </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <button type="submit" class="btn btn-primary">Reset password</button>
         </form>
-</div>
+    </div>
 </div>
 @stop

@@ -18,3 +18,4 @@ Route::get('/', function()
 
 Route::controller('/auth', 'AuthController');
 Route::controller('/forum', 'ForumController');
+Route::controller('/reset', 'RemindersController');
